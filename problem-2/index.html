@@ -6,4 +6,27 @@
     <title>Document</title>
   </head>
   <body></body>
+  <script>
+    const characterCounts = (incomingString) => {
+      let count = {};
+      console.log("string", incomingString);
+
+      incomingString = incomingString.replace(/\s/g, "").toUpperCase();
+      console.log(incomingString);
+
+      for (let char of incomingString) {
+        count[char] = (count[char] || 0) + 1;
+        console.log("object", count[char]);
+      }
+
+      for (let char of incomingString) {
+        if (count[char]) {
+          console.log(`${char} - ${count[char]}`);
+          delete count[char];
+        }
+      }
+    };
+    characterCounts("Amolya Sharma");
+    // characterCounts("Chinmay Kulkarni");
+  </script>
 </html>
